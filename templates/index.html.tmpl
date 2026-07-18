@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Items Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center; /* Centers the heading */
+            margin-bottom: 20px; /* Adds some spacing below the heading */
+            font-size: 32px;
+        }
+        h3 {
+            text-align: center; /* Centers the heading */
+            margin-bottom: 20px; /* Adds some spacing below the heading */
+            font-size: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flask Simple Shopping Application</h1>
+    <h3>Version  : {{ version }}</h3>
+    <h3>Hostname : {{ hostname }}</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Model Number</th>
+                <th>Price</th>
+                <th>Brand</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.model_number }}</td>
+                <td>{{ item.price }}</td>
+                <td>{{ item.brand }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
